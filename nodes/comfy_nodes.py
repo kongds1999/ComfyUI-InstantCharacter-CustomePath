@@ -25,7 +25,10 @@ class InstantCharacterLoadModel:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "hf_token": ("STRING", {"default": "", "multiline": True}),
+                # "hf_token": ("STRING", {"default": "", "multiline": True}),
+                "base_model_path": ("STRING", {"default": "/root/autodl-tmp/.cache/FLUX.1-dev", "multiline": True}),
+                "image_encoder_path": ("STRING", {"default": "/root/autodl-tmp/.cache/Siglip-so400m-patch14-384", "multiline": True}),
+                "image_encoder_2_path": ("STRING", {"default": "/root/autodl-tmp/.cache/Dinov2-giant", "multiline": True}),
                 "ip_adapter_name": (folder_paths.get_filename_list("ipadapter"), ),
                 "cpu_offload": ("BOOLEAN", {"default": False})
             }
@@ -35,11 +38,11 @@ class InstantCharacterLoadModel:
     FUNCTION = "load_model"
     CATEGORY = "InstantCharacter"
 
-    def load_model(self, hf_token, ip_adapter_name, cpu_offload):
-        login(token=hf_token)
-        base_model = "black-forest-labs/FLUX.1-dev"
-        image_encoder_path = "google/siglip-so400m-patch14-384"
-        image_encoder_2_path = "facebook/dinov2-giant"
+    def load_model(self, base_model_path, image_encoder_path, image_encoder_2_path, ip_adapter_name, cpu_offload):
+        # login(token=hf_token)
+        base_model = base_model_path
+        image_encoder_path = image_encoder_path
+        image_encoder_2_path = image_encoder_2_path
         cache_dir = folder_paths.get_folder_paths("diffusers")[0]
         image_encoder_cache_dir = folder_paths.get_folder_paths("clip_vision")[0]
         image_encoder_2_cache_dir = folder_paths.get_folder_paths("clip_vision")[0]
