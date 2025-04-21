@@ -1,3 +1,13 @@
+写在前面
+这是一个基于 `ComfyUI-InstantCharacter` 的简单修改版，主要适用于本地已经配置了模型环境的小伙伴。
+你可以直接修改 `Flux`、`Siglip`、和`Dinov2`的文件夹路径，其中 `instantcharacter_ip-adapter.bin`路径为
+```
+/path/to/ComfyUI/models/ipadapter/instantcharacter_ip-adapter.bin
+```
+![](./assets/node.png)
+
+
+---
 # ComfyUI-InstantCharacter
 
 ComfyUI-InstantCharacter 
