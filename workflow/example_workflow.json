@@ -1,0 +1,208 @@
+{
+  "id": "895d842a-8b76-4258-a17b-9047cbbc6de3",
+  "revision": 0,
+  "last_node_id": 12,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "PreviewImage",
+      "pos": [
+        883.4957885742188,
+        203.54733276367188
+      ],
+      "size": [
+        464.1000061035156,
+        638.0399780273438
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "InstantCharacterLoadModel",
+      "pos": [
+        -100.2613525390625,
+        158.43911743164062
+      ],
+      "size": [
+        400,
+        244
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INSTANTCHAR_PIPE",
+          "type": "INSTANTCHAR_PIPE",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "jax-explorer/ComfyUI-InstantCharacter",
+        "ver": "61636bd897268e7b6f16caad0987a76f5347006e",
+        "Node name for S&R": "InstantCharacterLoadModel"
+      },
+      "widgets_values": [
+        "/root/autodl-tmp/.cache/FLUX.1-dev",
+        "/root/autodl-tmp/.cache/Siglip-so400m-patch14-384",
+        "/root/autodl-tmp/.cache/Dinov2-giant",
+        "instantcharacter_ip-adapter.bin",
+        false
+      ]
+    },
+    {
+      "id": 5,
+      "type": "LoadImage",
+      "pos": [
+        -91.51517486572266,
+        463.7333679199219
+      ],
+      "size": [
+        399.995361328125,
+        504.1278076171875
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "即梦 1.jpeg",
+        "image",
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "InstantCharacterGenerate",
+      "pos": [
+        370.9487609863281,
+        198.29714965820312
+      ],
+      "size": [
+        400,
+        276
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "INSTANTCHAR_PIPE",
+          "link": 5
+        },
+        {
+          "name": "subject_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "jax-explorer/ComfyUI-InstantCharacter",
+        "ver": "0a0b09f7ff699237a081aa80a553292ab2106325",
+        "Node name for S&R": "InstantCharacterGenerate"
+      },
+      "widgets_values": [
+        "a {character} is sitting in a cafe drinking coffee",
+        1024,
+        768,
+        3.5,
+        28,
+        127472691135463,
+        "randomize",
+        0.9
+      ]
+    }
+  ],
+  "links": [
+    [
+      2,
+      5,
+      0,
+      2,
+      1,
+      "IMAGE"
+    ],
+    [
+      4,
+      2,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      5,
+      8,
+      0,
+      2,
+      0,
+      "INSTANTCHAR_PIPE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8140274938684002,
+      "offset": [
+        300.5003226915777,
+        -61.39061960101698
+      ]
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
