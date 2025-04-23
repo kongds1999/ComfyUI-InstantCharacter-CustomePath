@@ -1,13 +1,25 @@
+Written in the front
+
 写在前面
+
+
+This is a simple modified version based on `ComfyUI-InstantCharacter`, mainly suitable for friends who have already configured the model environment locally.
+
 这是一个基于 `ComfyUI-InstantCharacter` 的简单修改版，主要适用于本地已经配置了模型环境的小伙伴。
+
+
+You can directly modify the folder paths of `Flux`, `Siglip`, and `Dinov2`, where the path of `instantcharacter_ip-adapter.bin` is
+
 你可以直接修改 `Flux`、`Siglip`、和`Dinov2`的文件夹路径，其中 `instantcharacter_ip-adapter.bin`路径为
 ```
 /path/to/ComfyUI/models/ipadapter/instantcharacter_ip-adapter.bin
 ```
 ![](./assets/node.png)
+
+Note that `path` is the address of the local model repository, not the address of a single file, such as
 注意，`path`为本地模型仓库的地址，不是单个文件的地址，如
 ```
-/path/to/FLUX.1-dev/
+/root/autodl-tmp/.cache/FLUX.1-dev/
 .
 ├── LICENSE.md
 ├── README.md
@@ -46,7 +58,7 @@
     ├── config.json
     └── diffusion_pytorch_model.safetensors
 
-/path/to/Dinov2-giant/
+/root/autodl-tmp/.cache/Dinov2-giant/
 .
 ├── README.md
 ├── config.json
@@ -54,7 +66,7 @@
 ├── model.safetensors
 └── preprocessor_config.json
 
-/path/to/Siglip-so400m-patch14-384/
+/root/autodl-tmp/.cache/Siglip-so400m-patch14-384/
 .
 ├── README.md
 ├── config.json
