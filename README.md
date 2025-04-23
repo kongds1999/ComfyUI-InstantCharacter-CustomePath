@@ -5,7 +5,66 @@
 /path/to/ComfyUI/models/ipadapter/instantcharacter_ip-adapter.bin
 ```
 ![](./assets/node.png)
+注意，`path`为本地模型仓库的地址，不是单个文件的地址，如
+```
+/path/to/FLUX.1-dev/
+.
+├── LICENSE.md
+├── README.md
+├── ae.safetensors
+├── configuration.json
+├── dev_grid.jpg
+├── flux1-dev.safetensors
+├── model_index.json
+├── scheduler
+│   └── scheduler_config.json
+├── text_encoder
+│   ├── config.json
+│   └── model.safetensors
+├── text_encoder_2
+│   ├── config.json
+│   ├── model-00001-of-00002.safetensors
+│   ├── model-00002-of-00002.safetensors
+│   └── model.safetensors.index.json
+├── tokenizer
+│   ├── merges.txt
+│   ├── special_tokens_map.json
+│   ├── tokenizer_config.json
+│   └── vocab.json
+├── tokenizer_2
+│   ├── special_tokens_map.json
+│   ├── spiece.model
+│   ├── tokenizer.json
+│   └── tokenizer_config.json
+├── transformer
+│   ├── config.json
+│   ├── diffusion_pytorch_model-00001-of-00003.safetensors
+│   ├── diffusion_pytorch_model-00002-of-00003.safetensors
+│   ├── diffusion_pytorch_model-00003-of-00003.safetensors
+│   └── diffusion_pytorch_model.safetensors.index.json
+└── vae
+    ├── config.json
+    └── diffusion_pytorch_model.safetensors
 
+/path/to/Dinov2-giant/
+.
+├── README.md
+├── config.json
+├── configuration.json
+├── model.safetensors
+└── preprocessor_config.json
+
+/path/to/Siglip-so400m-patch14-384/
+.
+├── README.md
+├── config.json
+├── model.safetensors
+├── preprocessor_config.json
+├── special_tokens_map.json
+├── spiece.model
+├── tokenizer.json
+└── tokenizer_config.json
+```
 
 ---
 # ComfyUI-InstantCharacter
